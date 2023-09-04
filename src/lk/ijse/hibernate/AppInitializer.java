@@ -36,9 +36,17 @@ public class AppInitializer {
 
         /* session.get(<className>,<Identifier>) */
 
-        Customer c1 = session.get(Customer.class, "C001");
+//        Customer c1 = session.get(Customer.class, "C001");
+//
+//        System.out.println(c1.getName());
 
-        System.out.println(c1.getName());
+        // For Deleting Customer
+        Customer c1 = new Customer();
+
+        c1.setId("C001");
+
+        session.delete(c1);
+
 
 
         // Adding data to the tables
