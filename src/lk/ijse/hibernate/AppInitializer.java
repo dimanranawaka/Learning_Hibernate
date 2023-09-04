@@ -16,37 +16,32 @@ public class AppInitializer {
         c1.setSalary(50000.00);
         c1.setAddress("Matara");
 
-        Customer c2 = new Customer();
+        Customer C2 = new Customer();
 
-        c2.setId("C002");
-        c2.setName("Dasun");
-        c2.setSalary(60000.00);
-        c2.setAddress("Akuresa");
 
-        Customer c3 = new Customer();
+        C2.setId("C002");
+        C2.setName("Diman");
+        C2.setSalary(50000.00);
+        C2.setAddress("Matara");
 
-        c3.setId("C003");
-        c3.setName("Ranawaka");
-        c3.setSalary(60000.00);
-        c3.setAddress("Maliduwa");
-
-        Customer c4 = new Customer();
-
-        c4.setId("C004");
-        c4.setName("Dreed");
-        c4.setSalary(60000.00);
-        c4.setAddress("Akuresa");
 
         // Opening a session
         Session session = FactoryConfiguration.getInstance().getSession();
-
         //Setting Transaction
-        Transaction transaction = session.beginTransaction();
+//        Transaction transaction = session.beginTransaction();
 
-        session.save(c4);
+//        session.update(C2);
+
+        // For getting customer
+
+        /* session.get(<className>,<Identifier>) */
+
+        session.get(Customer.class,"C001");
+
+        System.out.println(session.get(Customer.class,"C001"));
 
         // Adding data to the tables
-        transaction.commit();
+//        transaction.commit();
         // Closing the session
         session.close();
     }
