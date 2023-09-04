@@ -1,5 +1,6 @@
 package lk.ijse.hibernate.util;
 
+import lk.ijse.hibernate.entity.Customer;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -16,7 +17,7 @@ public class FactoryConfiguration {
      private FactoryConfiguration(){
 
          /* 2. Create a configuration object  */
-          Configuration configuration = new Configuration().configure();
+          Configuration configuration = new Configuration().configure().addAnnotatedClass(Customer.class);
 
          /* 3. Build a SessionFactory using  created object and assign it to sessionFactory property*/
           sessionFactory = configuration.buildSessionFactory();
