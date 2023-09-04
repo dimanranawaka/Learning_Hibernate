@@ -1,5 +1,6 @@
 package lk.ijse.hibernate.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,6 +8,7 @@ import javax.persistence.Id;
 public class Customer {
     @Id
    private String id;
+    @Column(name = "cus_name") // This will create a column which we provided in the brackets
    private String name;
    private double salary;
    private String address;
