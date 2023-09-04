@@ -3,6 +3,7 @@ package lk.ijse.hibernate;
 import lk.ijse.hibernate.entity.Customer;
 import lk.ijse.hibernate.util.FactoryConfiguration;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class AppInitializer {
     public static void main(String[] args) {
@@ -17,8 +18,13 @@ public class AppInitializer {
         // Opening a session
         Session session = FactoryConfiguration.getInstance().getSession();
 
+        //Setting Transaction
+        Transaction transaction = session.beginTransaction();
+
         session.save(c1);
 
+        // Adding data to the tables
+        transaction.commit();
         // Closing the session
         session.close();
     }
