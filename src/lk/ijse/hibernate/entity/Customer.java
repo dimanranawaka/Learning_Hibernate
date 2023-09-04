@@ -3,7 +3,7 @@ package lk.ijse.hibernate.entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+@Entity(name = "customer_details") // This will create a table with name in the brackets
 public class Customer {
     @Id
    private String id;
