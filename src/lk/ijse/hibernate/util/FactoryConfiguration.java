@@ -16,7 +16,7 @@ public class FactoryConfiguration {
      private FactoryConfiguration(){
 
          /* 2. Create a configuration object  */
-          Configuration configuration = new Configuration();
+          Configuration configuration = new Configuration().configure();
 
          /* 3. Build a SessionFactory using  created object and assign it to sessionFactory property*/
           sessionFactory = configuration.buildSessionFactory();
