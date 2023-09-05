@@ -1,11 +1,14 @@
 package lk.ijse.hibernate.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Item {
+    // This is an Annotation - Annotation means : Meta-Data , Extra Information
     @Id
+    @Column(name = "item_code")
     String code;
     String description;
     double price;

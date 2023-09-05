@@ -16,12 +16,12 @@ public class AppInitializer {
 
         Item item1 = new Item();
 
-//        item1.setCode("I001");
-//        item1.setDescription("Cake");
-//        item1.setPrice(100);
-//        item1.setQty(500);
+        item1.setCode("I001");
+        item1.setDescription("Cake");
+        item1.setPrice(100);
+        item1.setQty(500);
 
-//        session.save(item1);
+        session.save(item1);
 
         // Get method
 
@@ -30,9 +30,9 @@ public class AppInitializer {
 //        System.out.println(i1);
 
         // Delete method
-        Item i2 = session.get(Item.class, "I001");
-
-        session.delete(i2);
+//        Item i2 = session.get(Item.class, "I001");
+//
+//        session.delete(i2);
 
         transaction.commit();
 
