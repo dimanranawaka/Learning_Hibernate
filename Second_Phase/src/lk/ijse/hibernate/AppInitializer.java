@@ -16,12 +16,18 @@ public class AppInitializer {
 
         Item item1 = new Item();
 
-        item1.setCode("I001");
-        item1.setDescription("Cake");
-        item1.setPrice(100);
-        item1.setQty(500);
+//        item1.setCode("I001");
+//        item1.setDescription("Cake");
+//        item1.setPrice(100);
+//        item1.setQty(500);
 
-        session.save(item1);
+//        session.save(item1);
+
+        // Get method
+
+        Item i1 = session.get(Item.class, "I001");
+
+        System.out.println(i1);
 
         transaction.commit();
 
