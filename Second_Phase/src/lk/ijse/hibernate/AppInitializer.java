@@ -9,19 +9,28 @@ import org.hibernate.Transaction;
 public class AppInitializer {
     public static void main(String[] args) {
 
-
-        Session session = FactoryConfiguration.getInstance().getSession();
-
-        Transaction transaction = session.beginTransaction();
-
         Item item1 = new Item();
 
         item1.setCode("I001");
         item1.setDescription("Cake");
         item1.setPrice(100);
-        item1.setQty(500);
+
+
+
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        Transaction transaction = session.beginTransaction();
+
+
 
         session.save(item1);
+
+//        session.save(item1);
+
+//        Item i001 = session.get(Item.class, "I001");
+//
+//        session.delete(i001);
+
 
         // Get method
 

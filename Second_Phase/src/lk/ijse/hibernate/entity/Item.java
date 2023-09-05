@@ -1,13 +1,18 @@
 package lk.ijse.hibernate.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import java.util.Date;
 
 @Entity
 public class Item {
     // This is an Annotation - Annotation means : Meta-Data , Extra Information
+    // @Transient- This will ignore the specific property by with creating column in database table
+    // @CreationTimestamp - This will automatically fill values to the Date column
     @Id
     @Column(name = "item_code")
     String code;
@@ -15,7 +20,8 @@ public class Item {
     double price;
     @Transient
     int qty;
-    // @Transient will ignore the specific property by with creating column in database table
+    @CreationTimestamp
+    Date date;
     public Item() {
     }
 
