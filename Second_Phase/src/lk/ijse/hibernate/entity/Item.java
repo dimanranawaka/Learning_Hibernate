@@ -3,6 +3,7 @@ package lk.ijse.hibernate.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class Item {
@@ -12,8 +13,9 @@ public class Item {
     String code;
     String description;
     double price;
+    @Transient
     int qty;
-
+    // @Transient will ignore the specific property by with creating column in database table
     public Item() {
     }
 
