@@ -25,9 +25,14 @@ public class AppInitializer {
 
         // Get method
 
-        Item i1 = session.get(Item.class, "I001");
+//        Item i1 = session.get(Item.class, "I001");
 
-        System.out.println(i1);
+//        System.out.println(i1);
+
+        // Delete method
+        Item i2 = session.get(Item.class, "I001");
+
+        session.delete(i2);
 
         transaction.commit();
 
