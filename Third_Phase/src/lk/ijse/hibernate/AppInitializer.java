@@ -13,14 +13,7 @@ public class AppInitializer {
 
 
 
-        Student s1 = new Student();
-        s1.setsId("S001");
-        s1.setName("Diman");
 
-        Laptop l2 = new Laptop();
-        l2.setlId("L002");
-        l2.setDescription("Asus");
-        l2.setStudent(s1);
 
         Session session = FactoryConfiguration.getInstance().getSession();
 
@@ -28,8 +21,7 @@ public class AppInitializer {
 
 
 
-//        session.save(s1);
-        session.save(l2);
+
 
         transaction.commit();
 
