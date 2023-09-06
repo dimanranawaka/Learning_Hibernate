@@ -14,9 +14,10 @@ public class Laptop {
     public Laptop() {
     }
 
-    public Laptop(String lId, String description) {
+    public Laptop(String lId, String description , Student student) {
         this.lId = lId;
         this.description = description;
+        this.student = student;
     }
 
     public String getlId() {
@@ -35,11 +36,21 @@ public class Laptop {
         this.description = description;
     }
 
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
     @Override
     public String toString() {
         return "Laptop{" +
                 "lId='" + lId + '\'' +
                 ", description='" + description + '\'' +
+                ", student=" + student +
                 '}';
     }
 }
+
