@@ -1,15 +1,22 @@
 package lk.ijse.hibernate.entity;
 
+import lk.ijse.hibernate.embeded.Name;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Customer {
+    @Id
     String id;
-    String name;
+    Name name;
     String address;
     double salary;
 
     public Customer() {
     }
 
-    public Customer(String id, String name, String address, double salary) {
+    public Customer(String id, Name name, String address, double salary) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -24,11 +31,11 @@ public class Customer {
         this.id = id;
     }
 
-    public String getName() {
+    public Name getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(Name name) {
         this.name = name;
     }
 
