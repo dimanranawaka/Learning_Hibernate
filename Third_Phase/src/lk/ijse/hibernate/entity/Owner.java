@@ -11,7 +11,7 @@ public class Owner {
     @Id
     private String oId;
     private String name;
-    @OneToMany
+    @OneToMany(mappedBy = "owner")
     private List <Pet> petList = new ArrayList<>(); // Cause one owner may have many pets
 
     public Owner() {
