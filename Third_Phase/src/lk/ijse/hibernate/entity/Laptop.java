@@ -2,13 +2,15 @@ package lk.ijse.hibernate.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity(name = "Laptop")
 public class Laptop {
     @Id
     private String lId;
     private String description;
-
+    @OneToOne
+    private Student student;
     public Laptop() {
     }
 
