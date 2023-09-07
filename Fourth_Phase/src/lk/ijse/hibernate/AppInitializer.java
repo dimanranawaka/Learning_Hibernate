@@ -6,6 +6,7 @@ import lk.ijse.hibernate.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,11 +38,18 @@ public class AppInitializer {
         owner1.getPetList().add(pet2);*/
 
         // Lazy Fetching
-        Owner m001 = session.get(Owner.class, "M001");
+//        Owner m001 = session.get(Owner.class, "M001");
 
-        String sql = "FROM Owner";
-        System.out.println(m001);
+        // --- In HQL ---
 
+        String hql = "FROM Owner";
+        Query query = session.createQuery(hql);
+        List<Owner> ownerList = query.list();
+
+        for (Owner owner:
+                ownerList) {
+            System.out.println(owner.getOwnerId() + " : "+owner.getOwnerName() + " : "+ owner.getPetList());
+        }
 
         transaction.commit();
         session.close();
