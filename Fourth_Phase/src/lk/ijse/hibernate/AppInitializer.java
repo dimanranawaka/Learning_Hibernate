@@ -42,13 +42,26 @@ public class AppInitializer {
 
         // --- In HQL ---
 
-        String hql = "FROM Owner";
+        /*String hql = "FROM Owner";
         Query query = session.createQuery(hql);
         List<Owner> ownerList = query.list();
 
         for (Owner owner:
                 ownerList) {
             System.out.println(owner.getOwnerId() + " : "+owner.getOwnerName() + " : "+ owner.getPetList());
+        }*/
+
+        // SELECT specified Column
+
+        String hql ="SELECT name FROM Owner";
+
+        Query query = session.createQuery(hql);
+
+        List<String> list = query.list(); // returns String List
+
+        for (String stringList:list
+             ) {
+            System.out.println(list);
         }
 
         transaction.commit();
