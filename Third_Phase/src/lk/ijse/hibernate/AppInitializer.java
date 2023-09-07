@@ -15,34 +15,42 @@ public class AppInitializer {
 
         l1.setLecName("Niroth");
         l1.setLecId("LOO1");
-        ArrayList<Subject> subjectList = null;
-        l1.setSubjectList(subjectList);
+//        ArrayList<Subject> subjectList = null;
+//        l1.setSubjectList(subjectList);
 
         Lecturer l2 = new Lecturer();
         l2.setLecId("LOO2");
         l2.setLecName("Prasad");
-        l2.setSubjectList(subjectList);
+//        l2.setSubjectList(subjectList);
 
 
         Subject s1 = new Subject();
         s1.setSubId("S001");
         s1.setSubjectName("Java");
-        ArrayList<Lecturer> lecturerList = null;
-        s1.setLecturerList(lecturerList);
+//        ArrayList<Lecturer> lecturerList = null;
+//        s1.setLecturerList(lecturerList);
 
         Subject s2 = new Subject();
         s2.setSubId("S002");
         s2.setSubjectName("Networking");
-        s2.setLecturerList(lecturerList);
+//        s2.setLecturerList(lecturerList);
 
         // 1 methodology
-        subjectList = new ArrayList<>();
-        subjectList.add(s1);
-        subjectList.add(s2);
+//        subjectList = new ArrayList<>();
+//        subjectList.add(s1);
+//        subjectList.add(s2);
+//
+//        lecturerList = new ArrayList<>();
+//        lecturerList.add(l1);
+//        lecturerList.add(l2);
 
-        lecturerList = new ArrayList<>();
-        lecturerList.add(l1);
-        lecturerList.add(l2);
+        // 2 methodology
+
+        l1.getSubjectList().add(s1);
+        l2.getSubjectList().add(s2);
+
+        s1.getLecturerList().add(l1);
+        s2.getLecturerList().add(l2);
 
 
         Session session = FactoryConfiguration.getInstance().getSession();
