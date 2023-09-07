@@ -1,6 +1,7 @@
 package lk.ijse.hibernate.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ public class Owner {
     @Id
     String ownerId;
     String ownerName;
-    @OneToMany(mappedBy = "owner")
+    @OneToMany(mappedBy = "owner", fetch = FetchType.EAGER)
     List<Pet> petList = new ArrayList<>();
     public Owner() {
     }

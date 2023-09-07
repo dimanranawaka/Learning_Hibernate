@@ -39,6 +39,7 @@ public class AppInitializer {
         // Lazy Fetching
         Owner m001 = session.get(Owner.class, "M001");
 
+        String sql = "FROM Owner";
         System.out.println(m001);
 
 
