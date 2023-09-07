@@ -66,7 +66,7 @@ public class AppInitializer {
 
         // Where Clause
 
-        String hql = "FROM Owner WHERE name LIKE 'D%' ";
+       /* String hql = "FROM Owner WHERE name LIKE 'D%' ";
         Query query = session.createQuery(hql);
 
         List<Owner> list = query.list();
@@ -74,6 +74,17 @@ public class AppInitializer {
         for (Owner owner:
             list ) {
             System.out.println(list);
+        }*/
+
+        // ORDER BY clause
+
+        String hql = "FROM Owner o ORDER BY o.ownerId DESC";
+        Query query = session.createQuery(hql);
+        List<Owner> listOwner = query.list();
+
+        for (Owner owner:
+             listOwner) {
+            System.out.println(listOwner);
         }
 
         transaction.commit();
