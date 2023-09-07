@@ -90,7 +90,7 @@ public class AppInitializer {
         // Using name parameters
         // perform WHERE Clause
 
-        String name = "Diman";
+        /*String name = "Diman";
 
         String hql = "FROM Owner WHERE name = : owner_name";
 
@@ -103,7 +103,23 @@ public class AppInitializer {
         for (Owner owner:
              listOwner) {
             System.out.println(listOwner);
-        }
+        }*/
+
+        // Update Clause
+
+        String id = "M001";
+        String name = "Diman";
+
+        String hql = "UPDATE Owner SET name = : owner_name WHERE ownerId = :owner_id ";
+
+        Query query = session.createQuery(hql);
+
+        query.setParameter("owner_name",name);
+        query.setParameter("owner_id",id);
+
+        int rowCount = query.executeUpdate();
+
+        System.out.println(rowCount > 0 ? "Updated ": "Not");
 
         transaction.commit();
         session.close();
