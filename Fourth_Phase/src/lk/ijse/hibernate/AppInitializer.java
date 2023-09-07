@@ -53,7 +53,7 @@ public class AppInitializer {
 
         // SELECT specified Column
 
-        String hql ="SELECT name FROM Owner";
+        /*String hql ="SELECT name FROM Owner";
 
         Query query = session.createQuery(hql);
 
@@ -61,6 +61,18 @@ public class AppInitializer {
 
         for (String stringList:list
              ) {
+            System.out.println(list);
+        }*/
+
+        // Where Clause
+
+        String hql = "FROM Owner WHERE name LIKE 'D%' ";
+        Query query = session.createQuery(hql);
+
+        List<Owner> list = query.list();
+
+        for (Owner owner:
+            list ) {
             System.out.println(list);
         }
 
