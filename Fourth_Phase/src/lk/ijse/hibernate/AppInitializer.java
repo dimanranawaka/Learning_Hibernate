@@ -78,8 +78,26 @@ public class AppInitializer {
 
         // ORDER BY clause
 
-        String hql = "FROM Owner o ORDER BY o.ownerId DESC";
+        /*String hql = "FROM Owner o ORDER BY o.ownerId DESC";
         Query query = session.createQuery(hql);
+        List<Owner> listOwner = query.list();
+
+        for (Owner owner:
+             listOwner) {
+            System.out.println(listOwner);
+        }*/
+
+        // Using name parameters
+        // perform WHERE Clause
+
+        String name = "Diman";
+
+        String hql = "FROM Owner WHERE name = : owner_name";
+
+        Query query = session.createQuery(hql);
+
+        query.setParameter("owner_name",name);
+
         List<Owner> listOwner = query.list();
 
         for (Owner owner:
