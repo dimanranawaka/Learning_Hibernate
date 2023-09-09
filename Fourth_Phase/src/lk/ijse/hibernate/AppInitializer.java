@@ -103,6 +103,17 @@ public class AppInitializer {
 
         // ORDER BY Clause
 
+        String hql = "From Owner o ORDER BY o.ownerId desc";
+
+        Query query = session.createQuery(hql);
+
+        List<Owner> list = query.list();
+
+        for (Owner owner:
+             list) {
+            System.out.println(owner);
+        }
+
         transaction.commit();
 
         session.close();
