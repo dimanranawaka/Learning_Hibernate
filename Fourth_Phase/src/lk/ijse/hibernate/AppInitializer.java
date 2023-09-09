@@ -66,7 +66,7 @@ public class AppInitializer {
 
         // SELECT specific COLUMN
 
-        String hql = "SELECT pId FROM Pet";
+        /*String hql = "SELECT pId FROM Pet";
 
         Query query = session.createQuery(hql);
 
@@ -75,6 +75,19 @@ public class AppInitializer {
         for (String s:
              breedList) {
             System.out.println(s);
+        }*/
+
+        // WHERE Clause
+
+        String hql = "FROM Owner WHERE ownerName LIKE 'D%'";
+
+        Query query = session.createQuery(hql);
+
+        List <Owner> list = query.list();
+
+        for (Owner names:
+             list) {
+            System.out.println(names);
         }
 
         transaction.commit();
