@@ -38,6 +38,8 @@ public class AppInitializer {
         session.save(p1);
         session.save(p2);*/
 
+        // --- SELECT *
+
         /*String hql = "FROM Owner";
 
         Query query = session.createQuery(hql);
@@ -49,7 +51,7 @@ public class AppInitializer {
             System.out.println(owner.getOwnerId()+" : "+owner.getOwnerName()+" : "+owner.getPetList());
         }*/
 
-        String hql = "FROM Pet";
+        /*String hql = "FROM Pet";
 
         Query query = session.createQuery(hql);
 
@@ -60,6 +62,19 @@ public class AppInitializer {
 
             System.out.println(pet.getOwnerId()+" : "+pet.getBreed()+" : "+pet.getOwnerId());
 
+        }*/
+
+        // SELECT specific COLUMN
+
+        String hql = "SELECT pId FROM Pet";
+
+        Query query = session.createQuery(hql);
+
+        List<String> breedList = query.list();
+
+        for (String s:
+             breedList) {
+            System.out.println(s);
         }
 
         transaction.commit();
