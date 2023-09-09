@@ -117,7 +117,7 @@ public class AppInitializer {
         // --- Using name parameters ---
 
         // WHERE Clause
-        String breed = "Dog";
+        /*String breed = "Dog";
         String hql = "FROM Pet WHERE breed = :breed_name";
 
         Query query = session.createQuery(hql);
@@ -129,7 +129,28 @@ public class AppInitializer {
         for (Pet pet:
              list) {
             System.out.println(pet.getOwnerId()+" : "+" : "+pet.getPId()+" : "+pet.getBreed());
+        }*/
+
+        // UPDATE Clause
+
+        String id = "P001";
+        String name = "Wolf";
+
+        String hql = "UPDATE Pet SET breed = :pet_breed WHERE pId = :owner_id";
+
+        Query query = session.createQuery(hql);
+
+        query.setParameter("pet_breed",name);
+        query.setParameter("owner_id",id);
+
+        int i = query.executeUpdate();
+
+        if (i>0){
+            System.out.println("Updated!");
+        }else {
+            System.out.println("Not Updated!");
         }
+
         transaction.commit();
 
         session.close();
