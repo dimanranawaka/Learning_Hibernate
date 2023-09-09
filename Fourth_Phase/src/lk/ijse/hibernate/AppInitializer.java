@@ -79,7 +79,7 @@ public class AppInitializer {
 
         // WHERE Clause
 
-        String hql = "FROM Owner WHERE ownerName LIKE 'D%'";
+        /*String hql = "FROM Owner WHERE ownerName LIKE 'D%'";
 
         Query query = session.createQuery(hql);
 
@@ -88,7 +88,20 @@ public class AppInitializer {
         for (Owner names:
              list) {
             System.out.println(names);
-        }
+        }*/
+
+        /*String hql = "SELECT pId , breed FROM Pet";
+
+        Query query = session.createQuery(hql);
+
+        List<String[]> list = query.list();
+
+        for (String[] select:
+             list) {
+            System.out.println(select);
+        }*/
+
+        // ORDER BY Clause
 
         transaction.commit();
 
