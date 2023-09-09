@@ -11,9 +11,9 @@ public class FactoryConfiguration {
     private SessionFactory sessionFactory;
     private FactoryConfiguration(){
 
-        Configuration configuration = new Configuration().configure().addAnnotatedClass(Pet.class)
-                .addAnnotatedClass(Owner.class);
-        sessionFactory = configuration.buildSessionFactory();
+
+        sessionFactory = new Configuration().mergeProperties(Utility.getProperties()).addAnnotatedClass(Owner.class).addAnnotatedClass(Pet.class)
+                .buildSessionFactory();
 
     }
     public static FactoryConfiguration getInstance(){
