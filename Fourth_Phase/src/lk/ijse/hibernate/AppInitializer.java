@@ -49,7 +49,18 @@ public class AppInitializer {
             System.out.println(owner.getOwnerId()+" : "+owner.getOwnerName()+" : "+owner.getPetList());
         }*/
 
+        String hql = "FROM Pet";
 
+        Query query = session.createQuery(hql);
+
+        List<Pet> listPet = query.list();
+
+        for (Pet pet:
+             listPet) {
+
+            System.out.println(pet.getOwnerId()+" : "+pet.getBreed()+" : "+pet.getOwnerId());
+
+        }
 
         transaction.commit();
 
