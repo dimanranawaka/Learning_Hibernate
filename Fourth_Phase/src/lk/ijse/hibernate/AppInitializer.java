@@ -103,7 +103,7 @@ public class AppInitializer {
 
         // ORDER BY Clause
 
-        String hql = "From Owner o ORDER BY o.ownerId desc";
+        /*String hql = "From Owner o ORDER BY o.ownerId desc";
 
         Query query = session.createQuery(hql);
 
@@ -112,8 +112,24 @@ public class AppInitializer {
         for (Owner owner:
              list) {
             System.out.println(owner);
-        }
+        }*/
 
+        // --- Using name parameters ---
+
+        // WHERE Clause
+        String breed = "Dog";
+        String hql = "FROM Pet WHERE breed = :breed_name";
+
+        Query query = session.createQuery(hql);
+
+        query.setParameter("breed_name",breed);
+
+        List<Pet> list = query.list();
+
+        for (Pet pet:
+             list) {
+            System.out.println(pet.getOwnerId()+" : "+" : "+pet.getPId()+" : "+pet.getBreed());
+        }
         transaction.commit();
 
         session.close();
